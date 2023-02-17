@@ -1,0 +1,21 @@
+.card:hover{
+   border-color: rgb(156, 141, 7);
+   border: 5px;
+//    background-color: rgb(139, 131, 131);
+   width: 20rem;
+   height: 410;
+    
+}
+.card{
+    height: 400px;
+    width: 18rem;
+}
+.headline{
+    margin-top: 4px;
+    border: 2px;
+    color: red;
+    text-shadow: 3px 4px 2px rgb(125, 98, 98)
+}
+img:hover{
+    width: 100%;
+}

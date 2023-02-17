@@ -1,0 +1,28 @@
+<div>
+    <h3 style="text-align: center;" class="headline">Product List</h3>
+</div>
+<hr class="mb-4">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 my-2" *ngFor="let products of product; let i = index">
+            <div class="card card-outline-secondary">
+                <img class="card-img-top mx-2 my-2" src={{products.img}} alt="Card image cap"
+                    style="width: 95%; height: 200px;" routerLink="{{products.link}}">
+                <div class="card-body">
+                    <h4 class="card-title" style="text-align: center;">{{products.name}}</h4>
+                    Model Name:- {{products.model}}<br>
+                    Price:- ₹ {{products.price}}<br>
+                    <hr class="mb-1">
+                    <button class="btn btn-primary my-2" (click)="addToCart(products)">Add to Cart</button>
+
+                    <a routerLink="{{products.link}}"><button class="btn btn-success btn-sm mx-4">Know
+                            more</button>
+                    </a>
+                    <button class="btn btn-danger" *ngIf="isAdmin" (click)="delete(i)"> Delete</button>
+                </div>
+                <br>
+            </div>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
