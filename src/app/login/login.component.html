@@ -1,0 +1,80 @@
+
+<div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="Submit()" class="card text-white bg-secondary mb-3 p-4">
+        <h2 style="text-align:center;">Login <i class='fas fa-lock' style='font-size:36px'></i></h2>
+        <hr>
+        <div class="form-group first">
+            <div class="col-md-8 mb-3">
+                <label for="exampleDropdownFormEmail">Email</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <i class="input-group-text fa fa-envelope icon mx-1" id="inputGroupPrepend2"></i>
+                    </div>
+                    <input type="text" class="form-control" id="Email" formControlName="email" placeholder="Enter Email Id"
+                        aria-describedby="inputGroupPrepend2" required>
+                </div> <span *ngIf="!loginForm.get('email')?.valid && loginForm.get('email')?.touched">*Please Enter Valid
+                    Email ID.</span>
+            </div>
+            <div class="col-md-8 mb-3">
+                <label for="inputPassword3">Password</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <i class="input-group-text fa fa-key icon mx-1" id="inputGroupPrepend2"></i>
+                    </div>
+                    <input type="password" class="form-control clr-input-group-icon-action" formControlName="password" id="inputPassword3"
+                        placeholder="Password">
+                </div><span *ngIf="!loginForm.get('password')?.valid && loginForm.get('password')?.touched">*Please Enter
+                    Passsword.</span>
+            </div>
+            <br>
+            <div><button type="button" class="btn btn-primary " routerLink="/Signup" >Sign-up</button>
+                <button type="submit" class="btn btn-primary "[disabled]="!loginForm.valid">Login</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+<!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
+<!-- <button onclick="document()" style="width:auto;">Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script> -->

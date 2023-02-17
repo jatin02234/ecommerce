@@ -1,0 +1,83 @@
+<div class="container">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="card text-white bg-secondary mb-3 p-4">
+        <h2 style="text-align:center;">Sign-up</h2>
+        <hr>
+        <div class="form-group first">
+            <div class="col-md-8 mb-2">
+                <label for="exampleDropdownForm01">First name</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <i class="input-group-text fa fa-user icon mx-2" id="inputGroupPrepend2"></i>
+                    </div>
+                    <input type="text" class="form-control" formControlName="firstname" id="Firstname"
+                        placeholder="First name"><br>
+                </div><span class="help-block"
+                    *ngIf="!signUpForm.get('firstname')?.valid && signUpForm.get('firstname')?.touched">*Please
+                    Enter First name.</span>
+            </div>
+            <div class="col-md-8 mb-2">
+                <label for="exampleDropdownForm02">Last name</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <i class="input-group-text fa fa-user icon mx-1 mx-2" id="inputGroupPrepend2"></i>
+                    </div>
+                    <input type="text" class="form-control" formControlName="lastname" id="Lastname"
+                        placeholder="Last name">
+                </div><span class="help-block"
+                    *ngIf="!signUpForm.get('lastname')?.valid && signUpForm.get('lastname')?.touched">*Please
+                    Enter Last name.</span>
+            </div>
+            <div class="col-md-8 mb-3">
+                <label for="exampleDropdownFormEmail">Email</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <i class="input-group-text fa fa-envelope icon mx-1 mx-2"></i>
+                    </div>
+                    <input type="email" class="form-control" formControlName="email" placeholder="Enter Email Id">
+                </div>
+                <span *ngIf="!signUpForm.get('email')?.valid && signUpForm.get('email')?.touched"
+                    pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$ ">*Please Enter Valid
+                    Email ID.</span>
+            </div>
+            <div class="col-md-8 mb-3">
+                <label for="inputPassword3">Password</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <i class="input-group-text fa fa-key icon mx-1 mx-2" id="inputGroupPrepend2"></i>
+                    </div>
+
+                    <input type="password" class="form-control" formControlName="password" id="inputPassword3"
+                        placeholder="Password">
+                </div>
+                <span *ngIf="!signUpForm.get('password')?.valid && signUpForm.get('password')?.touched">*Please Enter
+                    Passsword.</span>
+            </div>
+            <div class="col-md-8 mb-3">
+                <label for="inputPassword3">Confirm Password</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <i class="input-group-text fa fa-key icon mx-1 mx-2" id="inputGroupPrepend2"></i>
+                    </div>
+                    <input type="password" class="form-control" formControlName="cpassword" placeholder="Password">
+                </div>
+                <span *ngIf="signUpForm.get('cpassword')?.errors">
+                    <div *ngIf="signUpForm.get('cpassword')?.errors?.['confirmPasswordValidator']">
+                        Passsword and Confirm Password didn't match.
+                    </div>
+                </span>
+            </div>
+            <label for="">Who:-</label>
+            <div class="input-group mx-3" *ngFor="let role of roles">
+                <div class="radio">
+                    <input type="radio" formControlName="role" name="role" [value]="role">
+                    <!-- <input type="radio" name="select" value="user" formControlName="user"> -->
+                </div>&nbsp;
+                <label for="">{{ role }}</label>
+            </div>
+            <p>By creating an account you agree to our <a href="https://privacy.microsoft.com/en-us/privacystatement"
+                    style="color:dodgerblue">Terms & Privacy</a>.</p><br>
+            <button type="submit" class="btn btn-primary " [disabled]="!signUpForm.valid">Sign-up</button>
+            <button type="button" class="btn btn-primary " (click)="onlog()">Login</button>
+        </div>
+    </form>
+</div>

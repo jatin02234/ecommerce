@@ -1,0 +1,30 @@
+// .card:hover{
+//     border-color: rgb(12, 12, 12);
+//     border: 5px;
+//     background-color: rgb(209, 240, 35);
+//     color: rgb(246, 8, 8);
+//     width: 20rem;
+//     height: 410;
+     
+//  }
+.container{
+    margin: 0;
+    padding: 0;
+}
+ .card{
+     height: 450px;
+     width: 18rem;
+ }
+ .headline{
+     margin-top: 4px;
+     border: 2px;
+     color: red;
+     text-shadow: 3px 4px 2px rgb(125, 98, 98)
+ }
+
+ .cp{
+    position: absolute;
+    left: 1100px;
+    margin: 50px;
+
+ }
